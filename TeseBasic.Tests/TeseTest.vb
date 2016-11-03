@@ -16,8 +16,8 @@ Public Class TeseTest
         tese = Nothing
     End Sub
 
-    Private Const txt1 As String = ".firstName=Harry ~ .money=123.89 ~ .pets=13 ~ .houses=42 ~ .home.city.state=IA ~ .home.street=West Ohio Street ~ .home.city.name=Ankeny ~ .sex=m ~ .lastName=Johnson ~ .bits=7 ~ .home.postal=50023 ~ .sleep=10 ~ .home.city.code=1 ~ .id=1 ~ .crazyness=97.5 ~ .male=True ~ .home.number=22 ~ .awake=1 ~ .birth=1970-02-19T02:17:29.348+01:00"
-
+    Private Const txt1 As String = ".m_home.m_city.m_code=1 ~ .m_crazyness=97.5 ~ .m_male=True ~ .m_home.m_city.m_state=IA ~ .m_id=1 ~ .m_home.m_street=West Ohio Street ~ .m_pets=13 ~ .m_sex=m ~ .m_bits=7 ~ .m_home.m_postal=50023 ~ .m_awake=1 ~ .m_sleep=10 ~ .m_firstName=Harry ~ .m_money=123.89 ~ .m_home.m_number=22 ~ .m_home.m_city.m_name=Ankeny ~ .m_houses=42 ~ .m_birth=1970-02-19T02:17:29.348+01:00 ~ .m_lastName=Johnson"
+    
     Private Const secSinceEpoch As Long = 621355968000000000L
     Private Const factor As Integer = 10000
 
@@ -57,7 +57,7 @@ Public Class TeseTest
          42, CShort(13), 97.5F, CByte(7), BigInteger.One * 10, Decimal.One, _
          New DateTime((4238249348L * factor) + secSinceEpoch + (36000000000L)),
          New Address("West Ohio Street", 22, 50023, New City("Ankeny", State.IA, 1L)))
-        Dim txt As String = Flatten(tese.Serialize(cus))
+        Dim txt As String = Flatten(tese.Serialize(cus))        
         Assert.AreEqual(txt1, txt)
     End Sub
 
