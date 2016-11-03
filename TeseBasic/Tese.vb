@@ -101,7 +101,7 @@ Public Class Tese
             Case "String"
                 Return val
             Case Else
-                Throw New InvalidOperationException(type & " is not supported!")
+                Throw New InvalidOperationException(type.FullName + " is not supported!")
         End Select
     End Function
 
@@ -167,7 +167,7 @@ Public Class Tese
              "Int16", "String"
                 Return value.ToString()
             Case Else
-                Throw New InvalidOperationException(type & " is not supported!")
+                Throw New InvalidOperationException(type.FullName & " is not supported!")
         End Select
     End Function
 End Class

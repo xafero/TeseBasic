@@ -46,6 +46,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Kajabity.Tools">
+      <HintPath>..\packages\Kajabity.Tools.0.4.5928.1510\lib\net40\Kajabity.Tools.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Numerics" />
   </ItemGroup>
@@ -58,6 +61,9 @@
     <Compile Include="TeseReadException.vb" />
     <Compile Include="TeseWriteException.vb" />
     <Compile Include="Properties\AssemblyInfo.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

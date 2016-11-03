@@ -46,6 +46,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.3.5.0\lib\net40\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Numerics" />
   </ItemGroup>
@@ -59,6 +62,15 @@
     <Compile Include="Properties\AssemblyInfo.vb" />
     <Compile Include="State.vb" />
     <Compile Include="TeseTest.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TeseBasic\TeseBasic.vbproj">
+      <Project>{62636457-e103-41e0-a2a5-7d22719eebfc}</Project>
+      <Name>TeseBasic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

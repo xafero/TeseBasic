@@ -1,5 +1,6 @@
 ﻿
 Imports System.Numerics
+Imports NUnit.Framework
 
 <TestFixture()>
 Public Class TeseTest
@@ -54,14 +55,15 @@ Public Class TeseTest
     Public Sub TestSerialize()
         Dim cus As New Customer(1, "Harry", "Johnson", 123.89, True, "m"c, _
          42, CShort(13), 97.5F, CByte(7), BigInteger.One * 10, Decimal.One, _
-         New DateTime((4238249348L * factor) + secSinceEpoch + (36000000000L)), New Address("West Ohio Street", 22, 50023, New City("Ankeny", State.IA, 1L)))
+         New DateTime((4238249348L * factor) + secSinceEpoch + (36000000000L)),
+         New Address("West Ohio Street", 22, 50023, New City("Ankeny", State.IA, 1L)))
         Dim txt As String = Flatten(tese.Serialize(cus))
         Assert.AreEqual(txt1, txt)
     End Sub
 
     Private Function Flatten(txt As String) As [String]
         Dim nl As String = Environment.NewLine
-		txt = txt.Split(New () {nl}, 2, StringSplitOptions.None)(1).Trim()
+        txt = txt.Split(New String() {nl}, 2, StringSplitOptions.None)(1).Trim()
         txt = txt.Replace(nl, " ~ ")
         Return txt
     End Function
